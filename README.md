@@ -36,12 +36,14 @@ gem install aws-sdk
 
 ```
 /path/to/rds-backup-log.bash {db_instance_identifier} {log_dir}
+/path/to/rds-event.bash {log_dir}
 ```
 
 #### cron
 
 ```cron
-5 0 * * * /usr/local/tlab/script/rds-backup-log.bash dev-hpplus-db01 /usr/local/tlab/backup/rds/dev-hpplus-db01
+5 0 * * * /path/to/rds-backup-log.bash rds-identifier01 /path/to/backup/rds/rds-identifier01
+10 0 * * * /path/to/rds-event.bash /path/to/backup/rds/event
 ```
 
 ## TODO
