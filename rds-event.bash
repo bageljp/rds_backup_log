@@ -27,7 +27,7 @@ fi
 [ -d ${DIR_LOG} ] || mkdir -p ${DIR_LOG}
 
 # get event
-${CMD_AWS} rds describe-events --start-time 2014-02-04T15:00:00 --end-time 2014-02-05T14:59:59 >> ${LOG_RDS}.`date +%Y%m%d` 2>&1
+${CMD_AWS} rds describe-events --start-time ${TIME_START} --end-time ${TIME_END} >> ${LOG_RDS}.`date +%Y%m%d` 2>&1
 ret=$?
 
 [ -f ${LOG_RDS}.${DATE_OLD:-/nodefined} ] && rm -f ${LOG_RDS}.${DATE_OLD:-/nodefined}
